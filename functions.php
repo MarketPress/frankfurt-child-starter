@@ -50,15 +50,17 @@ function frankfurt_child_setup() {
 
 	if( !is_admin() ){
 
-		// styles
+		// child theme styles
 		add_filter( 'frankfurt_get_styles', 'frankfurt_child_filter_frankfurt_get_styles_add_stylesheets' );
 
-		// general
+		// custom site info in the footer
 		add_filter( 'frankfurt_get_footer_theme_info', 'frankfurt_child_filter_frankfurt_get_theme_info' );
+
+		// modify or remove social links
+		// add_filter( 'frankfurt_get_social_share_links', 'frankfurt_child_get_social_share_links', 10, 2 );
 
 	}
 }
-
 
 /**
  * Adding our own styles for our child theme
@@ -87,8 +89,6 @@ function frankfurt_child_filter_frankfurt_get_styles_add_stylesheets( array $sty
 
 }
 
-
-
 /**
  * Adding our own site info footer line
  *
@@ -108,4 +108,36 @@ function frankfurt_child_filter_frankfurt_get_theme_info( $text ) {
 
 	return $text;
 
+}
+
+/**
+ * Modify or remove social links output.
+ *
+ * @wp-hook frankfurt_get_social_share_links
+ * @param   String $markup
+ * @param   Array  $args
+ * @return  void|string
+ */
+function frankfurt_child_get_social_share_links( $markup, $args ) {
+
+	// Page slugs to be excluded. Enter your own!
+	$exclusions = array(
+		'legal-information',
+		'revocation-policy',
+		'terms-conditions',
+		'payment-methods',
+		'privacy',
+	);
+
+	// Loop through exclusions.
+	foreach ( $exclusions as $exclusion ) {
+
+		// If this page is to be excluded, return nothing.
+		if ( is_page( $exclusion ) ) {
+			return;
+		}
+	}
+
+	// Else: return markup string.
+	return $markup;
 }
