@@ -29,11 +29,4 @@ Also, as in Frankfurt and many other themes, minified stylesheets can be loaded 
 [![MarketPress.com](/assets/img/mp-logo.png)](http://marketpress.com)
 
 ## Changelog
-
-### 1.0.1
-
-* removed filter and function frankfurt_child_filter_frankfurt_get_theme_info
-
-### 1.0
-
-* Initial release.
+[Changelog](CHANGELOG.md)
