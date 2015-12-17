@@ -21,12 +21,18 @@ Also, as in Frankfurt and many other themes, minified stylesheets can be loaded 
 * [@inpsyde](https://github.com/inpsyde)
 * [@dasllama](https://github.com/dasllama)
 * [@Deku86](https://github.com/Deku86)
+* [@tinabillinger](https://github.com/tinabillinger)
+* [@twern](https://github.com/twern)
 
 **Brought to you by**
 
 [![MarketPress.com](/assets/img/mp-logo.png)](http://marketpress.com)
 
 ## Changelog
+
+### 1.0.1
+
+* removed filter and function frankfurt_child_filter_frankfurt_get_theme_info
 
 ### 1.0
 

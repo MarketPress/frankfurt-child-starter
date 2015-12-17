@@ -4,7 +4,7 @@
  *
  * @package    WordPress
  * @subpackage Frankfurt_Child
- * @version    1.0
+ * @version    1.0.1
  * @author     marketpress.com
  */
 
@@ -53,9 +53,6 @@ function frankfurt_child_setup() {
 		// child theme styles
 		add_filter( 'frankfurt_get_styles', 'frankfurt_child_filter_frankfurt_get_styles_add_stylesheets' );
 
-		// custom site info in the footer
-		add_filter( 'frankfurt_get_footer_theme_info', 'frankfurt_child_filter_frankfurt_get_theme_info' );
-
 		// modify or remove social links
 		// add_filter( 'frankfurt_get_social_share_links', 'frankfurt_child_get_social_share_links', 10, 2 );
 
@@ -86,27 +83,6 @@ function frankfurt_child_filter_frankfurt_get_styles_add_stylesheets( array $sty
 	);
 
 	return $styles;
-
-}
-
-/**
- * Adding our own site info footer line
- *
- * @wp-hook frankfurt_get_footer_theme_info
- * @param   String $text
- * @return  String $text
- */
-function frankfurt_child_filter_frankfurt_get_theme_info( $text ) {
-
-	$home_url = home_url( '/' );
-	$home_url = esc_url( $home_url );
-
-	$text = sprintf(
-		'<p class="site-info">Custom copyright here, including a <a href="%s" rel="designer nofollow">link</a>.</p>',
-		$home_url
-	);
-
-	return $text;
 
 }
 
