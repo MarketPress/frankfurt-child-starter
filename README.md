@@ -32,7 +32,7 @@ Also, as in Frankfurt and many other themes, minified stylesheets can be loaded 
 
 ### 1.0.1
 
-* removed filter and function hamburg_child_custom_footer_text
+* removed filter and function frankfurt_child_filter_frankfurt_get_theme_info
 
 ### 1.0
 
